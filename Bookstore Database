@@ -1,0 +1,25 @@
+-- Create a Bookstore Database
+
+CREATE TABLE Inventory (id INTEGER PRIMARY KEY, product TEXT, price REAL, quantity INTEGER, aisle INTEGER);
+
+INSERT INTO Inventory VALUES (1, "Storm Front", 9.99, 5, 2);
+INSERT INTO Inventory VALUES (2, "Eye of the world", 12.99, 2, 2);
+INSERT INTO Inventory VALUES (3, "History of the World", 51.79, 11, 6);
+INSERT INTO Inventory VALUES (4, "The Great Gatsby", 5.99, 4, 3);
+INSERT INTO Inventory VALUES (5, "The History of Jokes", 2.99, 3, 1);
+INSERT INTO Inventory VALUES (6, "Gone", 7.99, 8, 2);
+INSERT INTO Inventory VALUES (7, "Biochemistry 5th Edition", 89.97, 6, 6);
+INSERT INTO Inventory VALUES (8, "Cooking for Jello Heads", 25.99, 5, 8);
+INSERT INTO Inventory VALUES (9, "Fool Moon", 9.99, 1, 4);
+INSERT INTO Inventory VALUES (10, "Golf Through the Ages", 15.99, 7, 7);
+INSERT INTO Inventory VALUES (11, "Yellow Submarine", 11.99, 2, 9);
+INSERT INTO Inventory VALUES (12, "One Fish, Two Fish", 6.99, 4, 10);
+INSERT INTO Inventory VALUES (13, "Cat in the Hat", 6.99, 1, 10);
+INSERT INTO Inventory VALUES (14, "Ender's Game", 7.99, 3, 4);
+INSERT INTO Inventory VALUES (15, "Impractical Jokers", 22.99, 22, 1);
+
+-- Display the database ordered by Price
+SELECT * FROM Inventory ORDER BY Price;
+
+-- Display the total number of books in each aisle
+SELECT aisle, SUM(Quantity) FROM Inventory Group BY aisle;
